@@ -1,0 +1,139 @@
+<!--Erik Sandstrom 22NOV2015 JS100 ASSIGNMENT 7-1 MANIPULATE THE DOM WITH JAVASCRIPT-->
+
+<!DOCTYPE html>
+
+<html lang="en-US">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="description" content="Random Even Number Generator">
+      <meta name="MinimumWake" content="not a real website may contain borrowed public images and code for a class">
+      <title>Guglioni, Man of the radio</title>
+    </head>
+    
+    <script> 
+        
+        function dynamicGreeting(){
+        //create the built-in date object
+        var now = new Date();
+        var time = now.getHours();//extract the hours
+        
+        if (time < 12){
+            alert("good morning, what's on the radio?");
+        }
+        if (time == 12){
+            alert("time to eat lunch, lets listen to the radio while we munch.");
+        }
+        if (time > 12){
+            alert("good evening, this is Radio Clash." + now.toLocaleString());
+        }
+}
+    dynamicGreeting();
+        
+    </script>
+    
+    <style>
+        
+        body{
+        margin:0;
+        padding:0;
+        }
+        
+        #mainFold {
+           width: 800px;
+           height:auto;
+        }
+        
+        img {
+            margin: 2% 10% 4% 10%;
+            border-radius: 15%;
+        }
+        
+        .elements {
+           background-color:#30bbaf;
+        }
+         
+        .elements h1,p {
+            margin: 0% 10% 2% 50px ;
+            padding: 2%;
+        }
+        
+        span {
+            font-size: 2.5em;
+        }
+        
+        #headline #red {
+            color: #d41616;
+        }
+        
+        #headline #white {
+            color: #fff;
+        }
+        
+        #headline #green {
+            color: #1b6015;
+        }
+        
+        #message {
+          /*color: #ff05c9;*/
+            font-size: 1.25em;
+        }
+        
+        footer {
+            margin: 2% 4% 2% 45%;
+            padding-bottom: 2%;
+        }
+        
+        #vicePink {
+            color: #ff3dc5;
+            line-height: 2px;
+        }
+        
+    </style>
+    
+
+    <body id= "mainFold">
+      
+        <div class="elements"> 
+           
+            <h1 id="headline"><span id="red">Gugli</span><span id="white">oni Mar</span><span id="green">coni</span> gave us the radio.</h1>
+            
+            <hr id="vicePink">
+            
+            <img id="oldAndSilly" width="625" height="auto" src="https://farm1.staticflickr.com/38/96629375_b9ba422832.jpg"/>
+            
+            <p id="message">The world has hardly advanced one inch in terms of technolgy since <b>Guglioni Marconi</b> debuted his <em>wireless telegraph</em> in 1895. In the past 120 years, the human race has been merely distracted by such whoopidy-dings as the silly <em>television</em>, debuted in 1927, and the Rube Goldberg of all time - <em>the webcam</em>, first seen in 1991. It is clear to this writer that since 1895, the human race has experienced the very worst of diminishing returns on his beloved technological advances benefiting society. I for one will continue to sit in front of my console, with my good ear cocked fondly  towards the horn of my phonograph.</p>
+            
+            <footer id="foot">p.6</footer>
+            
+        </div> 
+        
+    </body>
+    
+    <script>
+        
+        //here we have where I pass the new alt tag to the image AFTER the page has loaded//
+        document.getElementById("oldAndSilly").alt="Pictured is a Solid State radio from the 1960's with a gold plastic frame and shiny chrome knobs."; 
+        
+        //here we have where I pass the paragraph (which is inside a div) text to the console
+        //var translate = document.getElementById('message');
+        //console.log(translate);
+        console.log(document.getElementById("message").innerHTML);
+        
+        //here we have where I pass the img alt tag text to the console//
+        var alt = document.getElementsByTagName('img')[0].getAttribute('alt');
+        console.log(alt);
+        
+        //here we have where I used JS to apply style to elements ONCE the page has loaded//
+        var dorado = document.getElementById('foot');
+        dorado.style.color = '#f0c800';
+        dorado.style.fontWeight = 'bold';
+        
+         
+    
+    </script>
+    
+    
+</html>
+    
+    
+    
